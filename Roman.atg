@@ -1,0 +1,14 @@
+   COMPILER Roman
+   /* Parse a list of Roman numbers in the range 1 ... 10 - grammar only
+      P.D. Terry, Rhodes University, 2017 */
+
+   IGNORE  CHR(9) .. CHR(13)
+
+   PRODUCTIONS
+      Roman      = OneNumber { "," OneNumber } "." .
+      OneNumber  = StartI | StartV | StartX .
+      StartI     = "I" [ [ "I" ] [ "I" ] | "V" | "X" ] .
+      StartV     = "V" [ "I" ] [ "I" ] [ "I" ] .
+      StartX     = "X" .
+   END Roman.
+
